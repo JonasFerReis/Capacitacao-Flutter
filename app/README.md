@@ -1,4 +1,4 @@
-# capacitacao
+# Capacitacao Flutter
 
 A new Flutter project.
 
