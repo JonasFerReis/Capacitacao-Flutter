@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "register/register_page.dart";
+import 'view/pages/register_page.dart';
 
 class MyApp extends StatelessWidget {
     const MyApp({super.key});

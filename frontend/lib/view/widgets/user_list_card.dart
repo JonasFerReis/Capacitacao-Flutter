@@ -2,17 +2,23 @@ import "package:flutter/material.dart";
 import "user_list_info.dart";
 
 class UserListCard extends StatefulWidget {
-    const UserListCard({super.key});
+
+    final UserListInfo userInfo;
+
+    const UserListCard({super.key, required this.userInfo});
 
     @override
-    _UserListCardState createState() {
-        return _UserListCardState();
+    State<UserListCard> createState() {
+        return _UserListCardState(userInfo);
     }
 }
 
 class _UserListCardState extends State<UserListCard> {
 
+    final UserListInfo userInfo;
     double cardWidth = 1;
+
+    _UserListCardState(this.userInfo);
 
     @override
     Widget build(BuildContext context){
@@ -58,9 +64,9 @@ class _UserListCardState extends State<UserListCard> {
                         ),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const[
-                                UserListInfo(),
-                                Icon(
+                            children: [
+                                userInfo,
+                                const Icon(
                                     Icons.edit,
                                     color: Color.fromARGB(255, 120, 0, 218),
                                 ),

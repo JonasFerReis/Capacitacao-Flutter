@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "register_form_field.dart";
-import "register_button.dart";
+import 'register_form_field.dart';
+import 'register_button.dart';
 
 class RegisterForm extends StatelessWidget {
     const RegisterForm({super.key});
@@ -13,7 +13,7 @@ class RegisterForm extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const[
+                    children: [
                         Text(
                             "CADASTRO", 
                             style: TextStyle(

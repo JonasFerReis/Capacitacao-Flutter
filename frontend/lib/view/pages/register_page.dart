@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'register_form.dart';
+import '../widgets/register_form.dart';
 
 class RegisterPage extends StatelessWidget {
     const RegisterPage({super.key});

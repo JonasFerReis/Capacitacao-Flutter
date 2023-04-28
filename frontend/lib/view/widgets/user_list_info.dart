@@ -1,16 +1,12 @@
 import "package:flutter/material.dart";
 
-class UserListInfo extends StatefulWidget {
-    const UserListInfo({super.key});
+class UserListInfo extends StatelessWidget {
 
-    @override
-    _UserListInfoState createState(){
-        return _UserListInfoState();
-    }
-}
+    final String name;
+    final String email;
 
-class _UserListInfoState extends State<UserListInfo> {
-    
+    const UserListInfo({super.key, required this.name, required this.email});
+
     @override
     Widget build(BuildContext context) {
         return Row(
@@ -27,17 +23,17 @@ class _UserListInfoState extends State<UserListInfo> {
                 Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const <Text>[
+                    children: [
                         Text(
-                            "USER21493",
-                            style: TextStyle(
+                            name,
+                            style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                             ),
                         ),
                         Text(
-                            "user21493@email.com",
-                            style: TextStyle(
+                            email,
+                            style: const TextStyle(
                                 fontSize: 14,
                                 // fontWeight: FontWeight.bold,
                             ),

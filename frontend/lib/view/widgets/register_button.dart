@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "../users-list/user_list_page.dart";
+import '../pages/user_list_page.dart';
 
 class RegisterButton extends StatelessWidget {
     const RegisterButton({super.key});
@@ -14,7 +14,7 @@ class RegisterButton extends StatelessWidget {
                     Navigator.of(context).push(
                         MaterialPageRoute(
                             builder: (context) {
-                                return const UserListPage();
+                                return UserListPage();
                             },
                         ),
                     );
