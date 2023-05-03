@@ -1,8 +1,13 @@
+import 'package:capacitacao/model/user_model.dart';
 import "package:flutter/material.dart";
 import '../pages/user_list_page.dart';
 
 class RegisterButton extends StatelessWidget {
-    const RegisterButton({super.key});
+
+    final GlobalKey<FormState>? formKey;
+    UserModel? user;
+
+    RegisterButton({super.key, this.formKey, this.user});
 
     @override
     Widget build(BuildContext context) {
@@ -11,13 +16,20 @@ class RegisterButton extends StatelessWidget {
             width: 100,
             child: ElevatedButton(
                 onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) {
-                                return UserListPage();
-                            },
-                        ),
-                    );
+                    if (formKey!.currentState!.validate()) {
+                        formKey!.currentState!.save();
+
+                        print("BUTTON:");
+                        print(user.toString());
+
+                        Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) {
+                                    return UserListPage();
+                                },
+                            ),
+                        );
+                    }
                 },
                 style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll<Color>(Color.fromARGB(255, 255, 110, 0)),

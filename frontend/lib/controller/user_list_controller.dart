@@ -19,10 +19,10 @@ class UserListController {
 
             return userList;
         }
-        on HttpException catch(e){
+        on HttpException catch(e) {
             return throw HttpException("ERRO NA REQUISIÇÃO: ${e.message}");
         }
-        catch (e){
+        catch(e) {
             return throw Exception("ERROR: $e");
         }
     }
