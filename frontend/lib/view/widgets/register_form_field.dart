@@ -1,4 +1,3 @@
-import "package:capacitacao/model/user_model.dart";
 import "package:flutter/material.dart";
 
 class RegisterFormField extends StatelessWidget { 

@@ -35,8 +35,9 @@ class _UserListCardState extends State<UserListCard> {
                         color: Colors.red,
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),
-                    child: const Icon(
-                        Icons.delete_sharp,
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.delete_sharp),
                         color: Colors.white,
                     ),
                 ),
