@@ -76,13 +76,13 @@ class RegisterPage extends StatelessWidget {
 
                                                             _registerController.postUser(user: user);
 
-                                                                Navigator.of(context).push(
-                                                                    MaterialPageRoute(
-                                                                        builder: (context) {
-                                                                            return UserListPage();
-                                                                        },
-                                                                    ),
-                                                                );
+                                                            Navigator.of(context).push(
+                                                                MaterialPageRoute(
+                                                                    builder: (context) {
+                                                                        return UserListPage();
+                                                                    },
+                                                                ),
+                                                            );
                                                         }
                                                     },
                                                     style: const ButtonStyle(
