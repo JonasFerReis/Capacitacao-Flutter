@@ -3,18 +3,19 @@ import "package:http/http.dart" as http;
 
 class RegisterController {
 
-    void postUser({required UserModel user}) async {
+    void postUser({required UserModel user}) async {   
         try {
-            var response = await http.post(
-                Uri.parse('https://jsonplaceholder.typicode.com/posts'), 
-                body: user.toJson(),
+            await http.post(
+                Uri.parse("http://localhost:8080/cadastrar"),
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8'
+                },
+                body: user.toJson()
             );
-
-            print(response.body);
-            print(user.toJson());
         }
-        catch(e) {
-            print(e);
+        catch (e) {
+            throw Exception("ERROR: $e");
         }
     }
+
 }

@@ -61,7 +61,6 @@ class RegisterPage extends StatelessWidget {
                                                 label: "SENHA:",
                                                 onSaved: (value) {
                                                     user = user.copyWith(senha: value);
-                                                    print(user);
                                                 },    
                                             ),
                                             RegisterFormField(
@@ -77,13 +76,13 @@ class RegisterPage extends StatelessWidget {
 
                                                             _registerController.postUser(user: user);
 
-                                                            Navigator.of(context).push(
-                                                                MaterialPageRoute(
-                                                                    builder: (context) {
-                                                                        return UserListPage();
-                                                                    },
-                                                                ),
-                                                            );
+                                                                Navigator.of(context).push(
+                                                                    MaterialPageRoute(
+                                                                        builder: (context) {
+                                                                            return UserListPage();
+                                                                        },
+                                                                    ),
+                                                                );
                                                         }
                                                     },
                                                     style: const ButtonStyle(
