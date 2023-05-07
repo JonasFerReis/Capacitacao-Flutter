@@ -3,8 +3,9 @@ import "package:flutter/material.dart";
 class RegisterFormField extends StatelessWidget { 
 
     final String label;
+    final void Function(String?)? onSaved;
 
-    const RegisterFormField({super.key, this.label = ""});
+    const RegisterFormField({super.key, this.label = "", this.onSaved});
 
     @override
     Widget build(BuildContext context) {
@@ -20,6 +21,12 @@ class RegisterFormField extends StatelessWidget {
         );
 
         return TextFormField(
+            validator: (value) {
+                if (value == null || value.isEmpty) {
+                    return "Campo obrigatório";
+                }
+            },
+            onSaved: onSaved,
             cursorColor: primaryColor,
             decoration: InputDecoration(
                 labelText: label,

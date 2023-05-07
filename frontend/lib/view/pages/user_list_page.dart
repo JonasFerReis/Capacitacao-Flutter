@@ -45,7 +45,7 @@ class UserListPage extends StatelessWidget {
                         );
                     }
 
-                    return Center(
+                    return const Center(
                         child: CircularProgressIndicator(),
                     ); 
                 },

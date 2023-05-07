@@ -1,4 +1,3 @@
-import 'dart:io';
 import "package:http/http.dart" as http;
 import 'dart:convert';
 import '../model/user_model.dart';
@@ -9,7 +8,7 @@ class UserListController {
 
     Future<List<UserModel>> getUserList() async {
         try {
-            var response = await http.get(Uri.parse("localhost:8080/listar"));
+            var response = await http.get(Uri.parse("http://localhost:8080/listar"));
 
             final List<dynamic> responseDecoded = jsonDecode(response.body);
 
@@ -19,11 +18,9 @@ class UserListController {
 
             return userList;
         }
-        on HttpException catch(e){
-            return throw HttpException("ERRO NA REQUISIÇÃO: ${e.message}");
-        }
-        catch (e){
+        catch(e) {
             return throw Exception("ERROR: $e");
         }
     }
+
 }

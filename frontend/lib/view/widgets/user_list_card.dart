@@ -30,13 +30,14 @@ class _UserListCardState extends State<UserListCard> {
                 Container(
                     height: 50,
                     alignment: Alignment.centerRight,
-                    padding: EdgeInsets.only(right: (screenWidth * 0.075) - 10),
+                    padding: EdgeInsets.only(right: (screenWidth * 0.075) - 16),
                     decoration: const BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),
-                    child: const Icon(
-                        Icons.delete_sharp,
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.delete_sharp),
                         color: Colors.white,
                     ),
                 ),
